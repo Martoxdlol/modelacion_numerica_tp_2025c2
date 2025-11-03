@@ -1,7 +1,6 @@
 import numpy as np
 import math
-from constantes import L0, g, k1, k2, m, Y_MAX_ANALITICO
-from punto_3 import find_h_for_euler_error, check_euler_order, get_acceleration
+from constantes import L0, k1, m, Y_MAX_ANALITICO, get_acceleration
 
 # --- RESOLUCIÓN PUNTO 4: MÉTODO DE RUNGE-KUTTA 4 ---
 
