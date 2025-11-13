@@ -1,23 +1,14 @@
-import markdown2
-import pdfkit
-import sys
-import os
+from markdown_pdf import MarkdownPdf, Section
 
-def markdown_to_pdf(input_path: str, output_path: str):
-    """Convert a Markdown file to a PDF file."""
-    if not os.path.exists(input_path):
-        raise FileNotFoundError(f"Input file not found: {input_path}")
+with open("informe.md", "r") as file:
+    content = file.read()
+    pdf = MarkdownPdf(toc_level=2, optimize=True)
 
-    # Read markdown content
-    with open(input_path, "r", encoding="utf-8") as f:
-        markdown_content = f.read()
+    pdf.add_section(Section(content, toc=False))
+    
+    pdf.meta["title"] = "Modelación Numérica - 25C2 - Bungee Jumping"
+    pdf.meta["author"] = "Tomás Cichero y Valeria Brzoza"
 
-    # Convert markdown to HTML
-    html_content = markdown2.markdown(markdown_content)
+    pdf.save("informe.pdf")
 
-    # Convert HTML to PDF
-    pdfkit.from_string(html_content, output_path)
-    print(f"PDF created successfully at {output_path}")
 
-if __name__ == "__main__":
-    markdown_to_pdf('informe.md', 'informe.pdf')
