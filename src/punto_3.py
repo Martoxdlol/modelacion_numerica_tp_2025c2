@@ -1,4 +1,3 @@
-import numpy as np
 import math
 from constantes import L0, k1, m, Y_MAX_ANALITICO, get_acceleration
 
