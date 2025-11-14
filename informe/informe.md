@@ -46,9 +46,49 @@ d²y/dt² = g - (k1/m) * (y - L0)^k2      (si y > L0, actúa la cuerda)
 
 ### 2. Solución Analítica (con k2=1)
 
+**Ecuación de movimiento:**
+
+Para k2=1, la ecuación de movimiento para `y > L0` se convierte en una Ecuación Diferencial Ordinaria (EDO) lineal de segundo orden:
+
+`m · y'' = m · g - k₁(y - L0)`
+
+↓
+
+`m · y'' + k₁ y = m · g + k₁ L0`
+
+**Transformada de Laplace:**
+
+Aplicando la transformada de Laplace y considerando las condiciones iniciales `y(0) = 0` y `y'(0) = 0`, se obtiene:
+
+Fase de caída libre:
+```
+y(t) = 1/2 gt²
+v(t) = y'(t) = gt
+```
+
+Fase con cuerda estirada:
+```
+y(t) = (L0 + mg/k1) - (mg/k1) · cos(ω(t - t0)) + (v0/ω) · sin(ω(t - t0))
+t0 = √(2L0/g)
+v0 = √(2gL0)
+ω = √(k1/m)
+```
+
+**Resolución por conservación de la energía:**
+
 Para el caso simplificado donde `k2=1`, el sistema se comporta como un resorte lineal. El punto más bajo de la trayectoria se puede calcular por conservación de la energía, igualando la energía potencial gravitatoria perdida con la energía potencial elástica ganada en el punto de máxima elongación (donde la velocidad es nula).
 
-`m*g*y_max = 0.5 * k1 * (y_max - L0)²`
+Energía Potencial Gravitatoria en `y_max`: `E_pg = m · g · y_max`
+
+Energía Potencial Elástica en `y_max`: `E_pe = 0.5 · k1 · (y_max - L0)²`
+
+Igualando ambas energías:
+
+`m · g · y_max = 0.5 · k1 · (y_max - L0)²`
+
+↓
+
+`0.5 · k1 · (y_max - L0)² - m · g · y_max = 0`
 
 Resolviendo la ecuación cuadrática resultante para `y_max`, se obtiene:
 
@@ -110,7 +150,7 @@ A continuación se muestra un **mapa de calor que muestra las combinaciones de k
 
 ![Análisis y_max vs a_max para Punto 6](../outputs/punto_6.png)
 
-A continuación se muestra la **simulación de la caída con parámetros encontrados sacados del mapa de calor.**.
+A continuación se muestra la **simulación de la caída con parámetros encontrados sacados del mapa de calor**.
 
 ![Simulación Punto 6](../outputs/punto_6_sim.png)
 
@@ -134,7 +174,7 @@ A continuación se muestra un **mapa de calor que muestra las combinaciones de k
 
 ![Análisis y_max vs a_max para Punto 7](../outputs/punto_7.png)
 
-A continuación se muestra la **simulación de la caída con parámetros encontrados sacados del mapa de calor.**.
+A continuación se muestra la **simulación de la caída con parámetros encontrados sacados del mapa de calor**.
 
 ![Simulación Punto 7](../outputs/punto_7_sim.png)
 
