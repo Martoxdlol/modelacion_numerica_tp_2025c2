@@ -1,9 +1,9 @@
 import math
 from constantes import L0, k1, m, Y_MAX_ANALITICO, get_acceleration
 
-# --- RESOLUCIÓN PUNTO 3: MÉTODO DE EULER ---
+# RESOLUCIÓN PUNTO 3: MÉTODO DE EULER
 
-# --- DEFINICIÓN DE LA FÍSICA ---
+# DEFINICIÓN DE LA FÍSICA
 def solve_euler(h):
     """
     Simula el salto usando el método de Euler con un paso h.
@@ -66,9 +66,9 @@ def check_euler_order():
     print("El resultado es cercano a 1, lo cual es el orden teórico de Euler.")
 
 
-# --- EJECUCIÓN PRINCIPAL ---
+# EJECUCIÓN PRINCIPAL
 if __name__ == "__main__":
-    print("--- ANÁLISIS NUMÉRICO - BUNGEE JUMPING ---")
+    print("--- ANÁLISIS NUMÉRICO - BUNGEE JUMPING")
     print(f"Parámetros: m={m:.2f} kg, L0={L0:.2f} m, k1={k1:.2f} N/m")
     print(f"Punto más bajo (Solución Analítica): {Y_MAX_ANALITICO:.2f} m\n")
 

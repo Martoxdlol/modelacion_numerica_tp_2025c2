@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from constantes import L0, g, k1, k2, m
 
-# --- DEFINICIÓN DE LA FÍSICA ---
+# DEFINICIÓN DE LA FÍSICA
 def get_acceleration(y):
     """Calcula la aceleración en una posición y dada."""
     if y <= L0:
@@ -12,7 +12,7 @@ def get_acceleration(y):
         return g - f_elastica / m
 
 
-# --- FUNCIONES DE SIMULACIÓN (MODIFICADAS PARA GUARDAR HISTORIAL) ---
+# FUNCIONES DE SIMULACIÓN (MODIFICADAS PARA GUARDAR HISTORIAL)
 
 def simulate_euler(h, t_max):
     """
@@ -76,7 +76,7 @@ def simulate_rk4(h, t_max):
     return history
 
 
-# --- EJECUCIÓN PRINCIPAL Y GRAFICACIÓN ---
+# EJECUCIÓN PRINCIPAL Y GRAFICACIÓN
 if __name__ == "__main__":
     T_MAX = 40  # [s] Tiempo total de simulación para ver 4 caídas
     H_EULER = 0.002  # [s] Paso encontrado en el ítem 3
@@ -93,7 +93,7 @@ if __name__ == "__main__":
     print("Ejecutando simulación de referencia (RK4 alta precisión)...")
     data_ref = simulate_rk4(0.001, T_MAX)
 
-    # --- Conversión de unidades para los gráficos ---
+    # Conversión de unidades para los gráficos
     # Velocidad: m/s -> km/h (multiplicar por 3.6)
     data_euler['v'] *= 3.6
     data_rk4['v'] *= 3.6
@@ -103,7 +103,7 @@ if __name__ == "__main__":
     data_rk4['a'] /= g
     data_ref['a'] /= g
 
-    # --- Creación de los gráficos ---
+    # Creación de los gráficos
     fig, axes = plt.subplots(3, 1, figsize=(12, 15), sharex=True)
     fig.suptitle('Análisis Comparativo de Métodos Numéricos - Bungee Jumping', fontsize=16)
 

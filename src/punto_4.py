@@ -2,7 +2,7 @@ import numpy as np
 import math
 from constantes import L0, k1, m, Y_MAX_ANALITICO, get_acceleration
 
-# --- RESOLUCIÓN PUNTO 4: MÉTODO DE RUNGE-KUTTA 4 ---
+# RESOLUCIÓN PUNTO 4: MÉTODO DE RUNGE-KUTTA 4
 
 def state_derivative(state):
     """
@@ -77,9 +77,9 @@ def check_rk4_order():
     print("El resultado es cercano a 4, lo cual es el orden teórico de RK4.")
 
 
-# --- EJECUCIÓN PRINCIPAL ---
+# EJECUCIÓN PRINCIPAL
 if __name__ == "__main__":
-    print("--- ANÁLISIS NUMÉRICO - BUNGEE JUMPING ---")
+    print("--- ANÁLISIS NUMÉRICO - BUNGEE JUMPING")
     print(f"Parámetros: m={m:.2f} kg, L0={L0:.2f} m, k1={k1:.2f} N/m")
     print(f"Punto más bajo (Solución Analítica): {Y_MAX_ANALITICO:.2f} m\n")
 

@@ -1,6 +1,6 @@
 import numpy as np
 
-# --- PARÁMETROS GLOBALES DEL PROBLEMA ---
+# PARÁMETROS GLOBALES DEL PROBLEMA
 NP = 107973
 H = 150.0  # m
 m = 40.0 / 10000.0 * (NP - 100000) + 50.0  # kg (81.89)
@@ -11,13 +11,13 @@ g = 9.81  # m/s^2
 c1 = 2.0 / 10000.0 * (NP - 100000) + 3.0  # N(s/m)^c2 (4.59)
 c2 = 1.5
 
-# --- CONDICIONES DEL PROBLEMA ---
+# CONDICIONES DEL PROBLEMA
 Y_MIN_TARGET = 0.90 * H  # Debe superar el 90% de H (135 m)
 Y_MAX_TARGET = 1.00 * H  # No debe superar el 100% de H (150 m)
 A_MAX_LIMIT = 2.5 * g   # Aceleración máxima permitida (24.525 m/s^2)
 
 
-# --- MOTOR DE SIMULACIÓN (RK4) ---
+# MOTOR DE SIMULACIÓN (RK4)
 
 def get_acceleration(y, v, k1, k2, with_air_resistance):
     """
@@ -108,7 +108,7 @@ def find_optimal_params(with_air_resistance):
     return None, None, None, None
 
 
-# --- EJECUCIÓN PRINCIPAL ---
+# EJECUCIÓN PRINCIPAL
 if __name__ == "__main__":
     print("==================================================")
     print("PUNTO 6: Dimensionamiento SIN Resistencia del Aire")
